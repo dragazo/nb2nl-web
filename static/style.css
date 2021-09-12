@@ -1,0 +1,23 @@
+#drop {
+    background-color: rgb(136, 136, 136);
+    border-radius: 50px;
+    color: white;
+    font-size: larger;
+    padding: 150px 150px 150px 150px;
+    display: inline-block;
+}
+#drop.drag-hover {
+    background-color: rgb(51, 139, 223);
+}
+#drop-wrapper {
+    padding: 5px 5px 5px 5px;
+    border-radius: 60px;
+    border: 4px dashed rgb(136, 136, 136);
+    display: inline-block;
+}
+#drop-wrapper.drag-hover {
+    border-color: rgb(51, 139, 223);
+}
+
+.center { text-align: center; }
+.spaced { margin-top: 75px; }

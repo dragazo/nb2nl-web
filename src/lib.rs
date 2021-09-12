@@ -26,9 +26,21 @@ pub fn main_js() -> Result<(), JsValue> {
 }
 
 #[wasm_bindgen]
-pub fn parse_xml(content: &str) -> Result<String, JsValue> {
+pub fn parse_xml(_proj_name: &str, content: &str) -> Result<String, JsValue> {
     match xml2nl::parse(&mut content.as_bytes()) {
         Ok(res) => Ok(res.to_string()),
         Err(err) => Err(format!("{:?}", err).into())
+    }
+}
+
+#[wasm_bindgen]
+pub fn parse_nl(proj_name: &str, mut content: &str) -> Result<String, JsValue> {
+    if let Some(pos) = content.find("@#$#@#$#@") {
+        content = &content[..pos];
+    }
+    
+    match nl2xml::parse(proj_name, content) {
+        Ok(res) => Ok(res.to_string()),
+        Err(err) => Err(format!("{}", err).into())
     }
 }
