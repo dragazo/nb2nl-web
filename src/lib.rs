@@ -27,7 +27,7 @@ pub fn main_js() -> Result<(), JsValue> {
 
 #[wasm_bindgen]
 pub fn parse_xml(content: &str) -> Result<String, JsValue> {
-    match Netlogo::parse_xml(&mut content.as_bytes()) {
+    match xml2nl::parse(&mut content.as_bytes()) {
         Ok(res) => Ok(res.to_string()),
         Err(err) => Err(format!("{:?}", err).into())
     }
