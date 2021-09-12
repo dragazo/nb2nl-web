@@ -279,7 +279,9 @@ checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
 
 [[package]]
 name = "nb2nl"
-version = "0.1.0"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3a9403a27bea6decb54ef6b364a058f626f1c257a1da9dbffafcef3f05db03fb"
 dependencies = [
  "lalrpop",
  "lalrpop-util",
